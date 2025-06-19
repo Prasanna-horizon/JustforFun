@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'unifont';
+  src: url('fonts/unifont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('font/PressStart2P.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav{
+  background-color: black;
+  margin:1rem;
+  padding: 0;
+}
+
+body {
+  
+  font-family: 'unifont', monospace;
+  font-size: 18px;
+  background-color: black;
+  color: #ffff;
+}
+
+.blinker{
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink{
+  50% {opacity: 0;}
+}
+
+#enter-screen, #boot-screen {
+  background-color: black;
+  color: white;
+}
+
+
+#boot-screen {
+    display: none;
+    height: 100vh;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    overflow-wrap: break-word;
+  }
+
+
+.boot-text {
+    max-width: 100%;
+    width: 100%;
+    word-break: break-word;
+    font-size: 1.2rem;
+  }
+
+.boot-text .line {
+    white-space: normal; /* Allow text to wrap */
+    margin-bottom: 0.5rem;
+  }
+
+@media (max-width: 768px) {
+    .boot-text {
+      font-size: 0.9rem;
+    }
+  }
+
+@media (max-width: 480px) {
+    .boot-text {
+      font-size: 0.75rem;
+    }
+  }
+
+.border-bold{
+  box-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+  border: 6px solid white;
+  min-height: 100vh;
+  padding:2rem;
+  border-radius: 8px;
+}
+
+.line{
+  text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.left-centered-text {
+  margin-top:20%;
+  padding-left: 2rem;
+}
+
+.right-centered-text {
+  
+  margin-top:20%;
+  padding-right: 2rem;
+}
+
+h1, h2
+{
+  text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+  font-family: 'PressStart2P';
+  font-size: 20px;
+}
+
+h6
+{
+  text-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+  font-family: 'unifont',monospace;
+  font-size: 18px;
+}
+
+.btn-outline-light
+{
+  box-shadow: 0 0 5px #33ff33, 0 0 10px #33ff33;
+}
+
+.crt-filter {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-filter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  z-index: 10;
+  mix-blend-mode: screen;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.96; }
+  50% { opacity: 1; }
+}
+
+.crt-filter {
+  animation: flicker 0.15s infinite;
+}

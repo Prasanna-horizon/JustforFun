@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="col-md-6 text-right">
+      <h6 class="text-monospace">Radio<span class="blinker">█</span></h6>
+      <button onclick="prevTrack()" class="btn btn-sm btn-outline-light">
+        <img src="img/prev.png" alt="Previous" width="24" height="24">
+      </button>
+      <button onclick="toggleMute()" class="btn btn-sm btn-outline-light" id="mute-btn">
+        <img src="img/mute.png" alt="Mute" width="24" height="24">
+      </button>
+      <button onclick="nextTrack()" class="btn btn-sm btn-outline-light">
+        <img src="img/next.png" alt="Next" width="24" height="24">
+      </button>
+
+      <script>
+        function prevTrack()
+        {
+          alert("Previous");
+        }
+
+        function nextTrack()
+        {
+          alert("Next");
+        }
+
+        function toggleMute()
+        {
+          alert("Mute");
+        }
+      </script>
+</body>
+</html>
